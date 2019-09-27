@@ -1,0 +1,984 @@
+/* Remove body margins */
+
+body {
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  justify-self: center;
+  background-color: rgb(249, 244, 237);
+}
+.container {
+  display: grid;
+  position: relative;
+  max-width: 750px;
+  padding-top: 3%;
+  justify-items: center;
+  justify-self: center;
+  align-self: center;
+  background-color: rgb(249, 244, 237);
+  grid-template-rows: repeat(7, auto);
+  /*border: 1px solid green;*/
+}
+.header {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /*background-color: #b75b5b;*/
+  grid-row: 1/2;
+  justify-items: center;
+  /*border: 1px solid red;*/
+}
+.logo {
+  display: grid;
+  position: relative;
+  grid-column: 1/2;
+  justify-self: start;
+  justify-items: end;
+  align-items: center;
+  color: white;
+  /*background-color: rgb(204, 102, 102);*/
+  border-color: #444444;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 10px;
+  margin-left: 10%;
+}
+#menuButton {
+  /*border: 1px solid red;*/
+}
+.nav {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  /*background-color: rgb(204, 102, 102);*/
+  justify-self: end;
+  margin-right: 10%;
+}
+.name {
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 155%;
+  padding-left: 20%;
+  height: 100%;
+  font-size: 1.6em;
+  color: white;
+  text-align: start;
+  align-self: center;
+  justify-self: start;
+  /*background-color: blueviolet;*/
+  background-color: rgb(204, 102, 102);
+  cursor: pointer;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+  transition: 0s background-color;
+}
+.close {
+  display: grid;
+  text-decoration: none;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: 25%;
+  height: 100%;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  align-self: center;
+  justify-self: end;
+  background-color: rgb(204, 102, 102);
+  transition: 0s background-color;
+}
+
+.overlay {
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden; /* Disable vertical scroll */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-template-rows: 60px 1fr 1fr;
+  grid-gap: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  justify-items: center;
+  align-items: center;
+  z-index: 5;
+  border-radius: 2px;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: #b75b5b; /* Black w/opacity */
+  /*border: 2px solid green;*/
+}
+/* #headerBar {
+  animation-delay: 2.5s;
+  animation-name: movedown;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+} */
+@keyframes movedown {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+#myNav {
+  animation-name: dropdown;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes dropdown {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+#originalImage {
+  animation-name: toColor;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes toColor {
+  0% {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+  25% {
+    -webkit-filter: grayscale(75%);
+    filter: grayscale(75%);
+  }
+  50% {
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+  }
+  75% {
+    -webkit-filter: grayscale(25%);
+    filter: grayscale(25%);
+  }
+  100% {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
+}
+
+#cityImage {
+  visibility: hidden !important;
+  animation-delay: 2s;
+  animation-name: moveleft;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes moveleft {
+  0% {
+    left: 20%;
+    visibility: hidden;
+  }
+  100% {
+    left: 8%;
+    visibility: visible;
+  }
+}
+
+#landscapeImage {
+  visibility: hidden !important;
+  animation-delay: 2s;
+  animation-name: moveright;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes moveright {
+  0% {
+    right: 20%;
+    visibility: hidden;
+  }
+  100% {
+    right: 8%;
+    visibility: visible;
+  }
+}
+
+.overlay .close a {
+  color: white;
+  text-align: center;
+}
+.profile {
+  display: grid;
+  align-items: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  height: 100%;
+  width: 100%;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  background-color: rgb(204, 102, 102);
+  cursor: pointer;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+  transition: 0s background-color;
+}
+.projects {
+  display: grid;
+  align-items: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-size: 2em;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  background-color: rgb(204, 102, 102);
+  cursor: pointer;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+  transition: 0s background-color;
+}
+.notes {
+  display: grid;
+  align-items: center;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-size: 2em;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  background-color: rgb(204, 102, 102);
+  cursor: pointer;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+  transition: 0s background-color;
+}
+.stack {
+  display: grid;
+  align-items: center;
+  grid-column: 2/3;
+  grid-row: 3/4;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-size: 2em;
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  background-color: rgb(204, 102, 102);
+  cursor: pointer;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+  transition: 0s background-color;
+}
+#name:hover {
+  background-color: #d17575;
+  transition: 0.4s;
+}
+#close:hover {
+  background-color: #d17575;
+  transition: 0.4s;
+}
+#profile:hover {
+  background-color: #d17575;
+  transition: 0.4s;
+}
+#projects:hover {
+  background-color: #d17575;
+  transition: 0.4s;
+}
+#notes:hover {
+  background-color: #d17575;
+  transition: 0.4s;
+}
+#stack:hover {
+  background-color: #d17575;
+  transition: 0.4s;
+}
+#myNav {
+  animation-name: dropdown;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+@keyframes dropdown {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.fullname {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  /*border-style: solid;
+  border-color: red;
+  border-width: 1px;*/
+  border-radius: 5px;
+  color: #444444;
+  background-color: #f9f4ed;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+}
+
+@media screen and (max-width: 1000px) {
+  .fullname {
+    display: grid;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    /*border-style: solid;
+    border-color: red;
+    border-width: 1px;*/
+    border-radius: 5px;
+    color: #444444;
+    background-color: #f9f4ed;
+    font-size: 150%;
+    font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms",
+      sans-serif;
+    padding-top: 0;
+    justify-items: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .fullname {
+    display: grid;
+    width: 100%;
+    text-align: center;
+    height: auto;
+    /*border-style: solid;
+    border-color: red;
+    border-width: 1px;*/
+    border-radius: 5px;
+    color: #444444;
+    background-color: #f9f4ed;
+    font-size: 100%;
+    font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms",
+      sans-serif;
+    padding-top: 0;
+    justify-items: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+.fullname h3 {
+  font-weight: 600;
+  padding: 0;
+}
+
+.social {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  position: relative;
+  padding-left: 10%;
+}
+.social .follow {
+  font-size: 20px;
+  display: grid;
+  grid-column: 1/2;
+  justify-items: center;
+  align-items: center;
+  height: 40px;
+  color: white;
+  border-radius: 5px;
+  background-color: #444444;
+  border-style: solid;
+  border-color: #cc6666;
+  border-width: 1px;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+}
+.social .profileb {
+  font-size: 20px;
+  display: grid;
+  grid-column: 2/3;
+  justify-items: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 5px;
+  color: black;
+  background-color: #f9f4ed;
+  border-style: solid;
+  border-color: #cc6666;
+  border-width: 1px;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+}
+
+.fa {
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+}
+.fa h3 {
+  font-size: 32px;
+  padding-left: 20px;
+  font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
+  color: #444444;
+}
+.footerlink {
+  display: grid;
+  height: auto;
+}
+#footerlink:hover {
+  color: #cc6666 !important;
+  cursor: pointer;
+  background-color: #fbf9f6;
+  transition: 0.4s;
+}
+#stackitem:hover {
+  color: #cc6666 !important;
+  cursor: pointer;
+  background-color: #fbf9f6;
+  transition: 0.4s;
+}
+#follow:hover {
+  color: #cc6666;
+  cursor: pointer;
+  background-color: #fbf9f6;
+  transition: 0.4s;
+}
+#profileb:hover {
+  color: #cc6666;
+  cursor: pointer;
+  background-color: #fbf9f6;
+  transition: 0.4s;
+}
+#projectDiv:hover {
+  color: #cc6666 !important;
+  cursor: pointer;
+  /*background-color: #fbf9f6;*/
+  transition: 0.4s;
+}
+/* footer media queries*/
+@media (max-width: 20em) {
+  #animationImages {
+    height: 60vh !important;
+  }
+  #originalImage {
+    width: 60vw !important;
+  }
+  #cityImage {
+    width: 60vw !important;
+  }
+  #landscapeImage {
+    width: 60vw !important;
+  }
+  #footerlink img {
+    width: 20px;
+    height: auto;
+  }
+  #wordDiv {
+    font-size: 30px !important;
+  }
+  #footerlink h2 {
+    font-size: 12px;
+  }
+  #profileName h1 {
+    font-size: 16px;
+  }
+  #projectCount img {
+    width: 30px;
+    height: auto;
+  }
+  #projectCount h1 {
+    font-size: 12px;
+  }
+  #fullName h1 {
+    font-size: 16px;
+  }
+  #caption h3 {
+    font-size: 8px;
+  }
+  #frontParagraph p {
+    font-size: 16px;
+  }
+  #projectParagraph p {
+    font-size: 11px;
+  }
+  #profileParagraph p {
+    font-size: 11px;
+  }
+  #stackParagraph p {
+    font-size: 11px;
+  }
+  #lifesofar li {
+    font-size: 11px;
+  }
+  #loverof li {
+    font-size: 11px;
+  }
+  #creativeDiv h3 {
+    font-size: 13px;
+  }
+  #horizontalRule {
+    height: 7px;
+    border-radius: 2px;
+  }
+  #profile img {
+    width: 40px;
+  }
+  #projects img {
+    width: 40px;
+  }
+  #notes img {
+    width: 40px;
+  }
+  #stack img {
+    width: 40px;
+  }
+  .profile {
+    font-size: 1.2em;
+  }
+  .projects {
+    font-size: 1.2em;
+  }
+  .notes {
+    font-size: 1.2em;
+  }
+  .stack {
+    font-size: 1.2em;
+  }
+  @keyframes dropdown {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 60vh;
+    }
+  }
+  @keyframes moveleft {
+    0% {
+      left: 20%;
+      visibility: hidden;
+    }
+    100% {
+      left: 0%;
+      visibility: visible;
+    }
+  }
+  @keyframes moveright {
+    0% {
+      right: 20%;
+      visibility: hidden;
+    }
+    100% {
+      right: 0%;
+      visibility: visible;
+    }
+  }
+}
+@media only screen and (min-width: 20em) and (max-width: 30em) {
+  /* Styles */
+  #animationImages {
+    height: 60vh !important;
+  }
+  #originalImage {
+    width: 60vw !important;
+  }
+  #cityImage {
+    width: 60vw !important;
+  }
+  #landscapeImage {
+    width: 60vw !important;
+  }
+  #footerlink img {
+    width: 30px;
+    height: auto;
+  }
+  #wordDiv {
+    font-size: 45px !important;
+  }
+  #projectCount img {
+    width: 40px;
+    height: auto;
+  }
+  #footerlink h2 {
+    font-size: 16px;
+  }
+  #profileName h1 {
+    font-size: 20px;
+  }
+  #projectCount h1 {
+    font-size: 16px;
+  }
+  #fullName h1 {
+    font-size: 24px;
+  }
+  #caption h3 {
+    font-size: 11px;
+  }
+  #frontParagraph p {
+    font-size: 16px;
+  }
+  #projectParagraph p {
+    font-size: 15px;
+  }
+  #profileParagraph p {
+    font-size: 15px;
+  }
+  #stackParagraph p {
+    font-size: 15px;
+  }
+  #lifesofar li {
+    font-size: 15px;
+  }
+  #loverof li {
+    font-size: 15px;
+  }
+  #creativeDiv h3 {
+    font-size: 15px;
+  }
+  #horizontalRule {
+    height: 8px;
+    border-radius: 3px;
+  }
+  #profile img {
+    width: 40px;
+  }
+  #projects img {
+    width: 40px;
+  }
+  #notes img {
+    width: 40px;
+  }
+  #stack img {
+    width: 40px;
+  }
+  .profile {
+    font-size: 1.4em;
+  }
+  .projects {
+    font-size: 1.4em;
+  }
+  .notes {
+    font-size: 1.4em;
+  }
+  .stack {
+    font-size: 1.4em;
+  }
+  @keyframes dropdown {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 60vh;
+    }
+  }
+  @keyframes moveleft {
+    0% {
+      left: 20%;
+      visibility: hidden;
+    }
+    100% {
+      left: 0%;
+      visibility: visible;
+    }
+  }
+  @keyframes moveright {
+    0% {
+      right: 20%;
+      visibility: hidden;
+    }
+    100% {
+      right: 0%;
+      visibility: visible;
+    }
+  }
+}
+@media only screen and (min-width: 30em) and (max-width: 40em) {
+  /* Styles */
+  #animationImages {
+    height: 90vh !important;
+  }
+  #originalImage {
+    width: 60vw !important;
+  }
+  #cityImage {
+    width: 60vw !important;
+  }
+  #landscapeImage {
+    width: 60vw !important;
+  }
+  #footerlink img {
+    width: 30px;
+    height: auto;
+  }
+  #wordDiv {
+    font-size: 60px !important;
+  }
+  #projectCount img {
+    width: 50px;
+    height: auto;
+  }
+  #footerlink h2 {
+    font-size: 16px;
+  }
+  #profileName h1 {
+    font-size: 20px;
+  }
+  #projectCount h1 {
+    font-size: 20px;
+  }
+  #fullName h1 {
+    font-size: 24px;
+  }
+  #caption h3 {
+    font-size: 13px;
+  }
+  #frontParagraph p {
+    font-size: 13px;
+  }
+  #projectParagraph p {
+    font-size: 13px;
+  }
+  #profileParagraph p {
+    font-size: 15px;
+  }
+  #stackParagraph p {
+    font-size: 17px;
+  }
+  #lifesofar li {
+    font-size: 15px;
+  }
+  #loverof li {
+    font-size: 15px;
+  }
+  #creativeDiv h3 {
+    font-size: 15px;
+  }
+  #horizontalRule {
+    height: 9px;
+    border-radius: 4px;
+  }
+  #profile img {
+    width: 60px;
+  }
+  #projects img {
+    width: 60px;
+  }
+  #notes img {
+    width: 60px;
+  }
+  #stack img {
+    width: 60px;
+  }
+  .profile {
+    font-size: 1.6em;
+  }
+  .projects {
+    font-size: 1.6em;
+  }
+  .notes {
+    font-size: 1.6em;
+  }
+  .stack {
+    font-size: 1.6em;
+  }
+  @keyframes dropdown {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 80vh;
+    }
+  }
+  @keyframes moveleft {
+    0% {
+      left: 20%;
+      visibility: hidden;
+    }
+    100% {
+      left: 0%;
+      visibility: visible;
+    }
+  }
+  @keyframes moveright {
+    0% {
+      right: 20%;
+      visibility: hidden;
+    }
+    100% {
+      right: 0%;
+      visibility: visible;
+    }
+  }
+}
+@media only screen and (min-width: 40em) and (max-width: 50em) {
+  /* Styles */
+  #footerlink img {
+    width: 40px;
+    height: auto;
+  }
+  #projectCount img {
+    width: 70px;
+    height: auto;
+  }
+  #wordDiv {
+    font-size: 75px !important;
+  }
+  #footerlink h2 {
+    font-size: 20px;
+  }
+  #profileName h1 {
+    font-size: 20px;
+  }
+  #projectCount h1 {
+    font-size: 24px;
+  }
+  #fullName h1 {
+    font-size: 30px;
+  }
+  #caption h3 {
+    font-size: 16px;
+  }
+  #frontParagraph p {
+    font-size: 14px;
+  }
+  #profileParagraph p {
+    font-size: 17px;
+  }
+  #projectParagraph p {
+    font-size: 14px;
+  }
+  #stackParagraph p {
+    font-size: 18px;
+  }
+  #lifesofar li {
+    font-size: 17px;
+  }
+  #loverof li {
+    font-size: 17px;
+  }
+  #creativeDiv h3 {
+    font-size: 17px;
+  }
+  #horizontalRule {
+    height: 10px;
+    border-radius: 5px;
+  }
+  #profile img {
+    width: 80px;
+  }
+  #projects img {
+    width: 80px;
+  }
+  #notes img {
+    width: 80px;
+  }
+  #stack img {
+    width: 80px;
+  }
+  .profile {
+    font-size: 1.8em;
+  }
+  .projects {
+    font-size: 1.8em;
+  }
+  .notes {
+    font-size: 1.8em;
+  }
+  .stack {
+    font-size: 1.8em;
+  }
+
+  @keyframes dropdown {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 90vh;
+    }
+  }
+}
+@media (min-width: 50em) {
+  /* Styles */
+  #animationImages {
+    height: 50vh;
+  }
+  #footerlink img {
+    width: 50px;
+    height: auto;
+  }
+  #footerlink h2 {
+    font-size: 24px;
+  }
+  #projectCount img {
+    width: 100px;
+    height: auto;
+  }
+  #frontParagraph p {
+    font-size: 19px;
+  }
+  #wordDiv {
+    font-size: 90px;
+  }
+  @keyframes dropdown {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 100vh;
+    }
+  }
+}
+@media (min-width: 62.5em) {
+  #personalityDiv {
+    grid-template-areas: "div1 div2";
+  }
+  #lifesofar {
+    grid-area: div1;
+  }
+  #loverof {
+    grid-area: div2;
+  }
+}
+@media (max-width: 62.4em) {
+  #personalityDiv {
+    grid-template-areas:
+      "div1"
+      "div2";
+  }
+  #lifesofar {
+    display: grid;
+    grid-area: div1;
+    justify-items: start;
+    justify-self: start;
+    padding-left: 5%;
+  }
+  #loverof {
+    display: grid;
+    grid-area: div2;
+    justify-items: start;
+    justify-self: start;
+    padding-left: 5%;
+  }
+}
+@media only screen and (min-width: 50em) and (max-width: 80em) {
+  #fullName h1 {
+    font-size: 40px;
+  }
+}
