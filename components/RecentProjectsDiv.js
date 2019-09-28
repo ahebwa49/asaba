@@ -16,7 +16,7 @@ class RecentProjectsDiv extends Component {
   }
   handleTundaClick(e) {
     Router.push({
-      pathname: "https://tunda.ug",
+      pathname: "https://github.com/ahebwa49/e-commerce",
       query: {}
     });
   }
@@ -94,7 +94,7 @@ class RecentProjectsDiv extends Component {
             <h2>TUNDA</h2>
             <p>
               Designed to be Uganda’s biggest e-commerce platform. See project{" "}
-              <Link href="https://www.tunda.xyz/">
+              <Link href="https://github.com/ahebwa49/e-commerce">
                 <a target="_blank">here</a>
               </Link>{" "}
             </p>
