@@ -40,7 +40,7 @@ const ProjectCount = () => {
         <img width="100" src="../static/blackproject.png" />
       </div>
       <div style={styles.text}>
-        <h1> 3 PROJECTS</h1>
+        <h1> 4 PROJECTS</h1>
       </div>
     </div>
   );
