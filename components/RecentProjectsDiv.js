@@ -47,7 +47,7 @@ const RecentProjectsDiv = () => {
           />
         </div>
       </div>
-      <div style={styles.container} onClick={this.handleProggieClick}>
+      <div style={styles.container} >
         <div style={styles.text} id="projectDiv">
           <h2>PROGGIE</h2>
           <p>
@@ -67,7 +67,7 @@ const RecentProjectsDiv = () => {
           />
         </div>
       </div>
-      <div style={styles.container} onClick={this.handleProggieClick}>
+      <div style={styles.container}>
         <div style={styles.text} id="projectDiv">
           <h2>MINDSET</h2>
           <p>
@@ -88,7 +88,7 @@ const RecentProjectsDiv = () => {
           />
         </div>
       </div>
-      <div style={styles.container} onClick={this.handleProggieClick}>
+      <div style={styles.container}>
         <div style={styles.text} id="projectDiv">
           <h2>TUNDA</h2>
           <p>
