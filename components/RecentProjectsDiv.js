@@ -5,27 +5,13 @@ import Link from "next/link";
 class RecentProjectsDiv extends Component {
   constructor(props) {
     super(props);
-    this.handleProggieClick = this.handleProggieClick.bind(this);
-    this.handleTundaClick = this.handleTundaClick.bind(this);
   }
-  handleProggieClick(e) {
-    Router.push({
-      pathname: "https://proggie.ug",
-      query: {}
-    });
-  }
-  handleTundaClick(e) {
-    Router.push({
-      pathname: "https://github.com/ahebwa49/e-commerce",
-      query: {}
-    });
-  }
+
   render() {
     const styles = {
       container: {
         display: "grid",
         gridTemplateColumns: "2fr 1fr",
-        //border: "1px solid red",
         height: "auto",
         fontFamily: "dosis",
         cursor: "pointer",
@@ -33,21 +19,39 @@ class RecentProjectsDiv extends Component {
       },
       text: {
         gridColumn: "1/2",
-        //paddingLeft: "5%",
         fontFamily: "dosis",
         color: "#444444"
-        //border: "1px solid red"
       },
       image: {
         display: "grid",
         gridColumn: "2/3",
         justifyItems: "center",
         alignItems: "center"
-        //border: "1px solid red"
       }
     };
     return (
       <div>
+        <div style={styles.container}>
+          <div style={styles.text} id="projectDiv">
+            <h2>PLANOGY</h2>
+            <p>
+              Planogy is the fastest tool to share your screenshots and get
+              feedback from your team and clients. See project{" "}
+              <Link href="https://planogy.com">
+                <a target="_blank">here</a>
+              </Link>{" "}
+            </p>
+          </div>
+          <div style={styles.image}>
+            <img
+              style={{ float: "right" }}
+              width="75%"
+              height="auto"
+              src="../static/planogy.png"
+              alt="project image"
+            />
+          </div>
+        </div>
         <div style={styles.container} onClick={this.handleProggieClick}>
           <div style={styles.text} id="projectDiv">
             <h2>PROGGIE</h2>
