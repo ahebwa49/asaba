@@ -17,7 +17,7 @@ const ProjectWordDiv = () => {
   };
   return (
     <div style={styles.container} id="wordDiv">
-      PROJECTS
+      VISUALISATIONS
     </div>
   );
 };

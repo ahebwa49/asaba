@@ -57,7 +57,7 @@ class FooterProjects extends Component {
           <img width="50" src="../static/blackproject.png" />
         </div>
         <div style={styles.text}>
-          <h2>PROJECTS</h2>
+          <h2>VISUALIZATIONS</h2>
         </div>
       </div>
     );

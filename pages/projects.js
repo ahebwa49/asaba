@@ -9,6 +9,7 @@ import ProjectProfileDiv from "../components/ProjectProfileDiv";
 import SocialDiv from "../components/SocialDiv";
 import Footer from "../components/Footer";
 import FooterNote from "../components/FooterNote";
+import Charts from "../components/Charts";
 
 const ProjectsPage = props => {
   return (
@@ -18,9 +19,10 @@ const ProjectsPage = props => {
       <ProjectParagraphDiv />
       <HorizontalRule />
       <br />
-      <ProjectCount />
-      <ProjectsDiv />
-      <br/>
+      {/* <ProjectCount />
+      <ProjectsDiv /> */}
+      <Charts />
+      <br />
       <HorizontalRule />
       <br />
       <ProjectProfileDiv />

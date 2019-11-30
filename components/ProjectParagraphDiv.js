@@ -14,7 +14,7 @@ const ProjectParagraphDiv = () => {
   return (
     <div style={styles.container} id="projectParagraph">
       <p>
-        I put a lot of pressure on myself when it comes to software development
+        I put a lot of pressure on myself when it comes to data visualizations
         - most of my work never sees the light of day. *wipes away tear*
       </p>
     </div>

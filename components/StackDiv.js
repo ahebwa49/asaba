@@ -20,6 +20,7 @@ const StackDiv = () => {
         <li>HTML5</li>
         <li>CSS3</li>
         <li>JavaScript</li>
+        <li>d3</li>
         <li>Webpack</li>
         <li>Babel</li>
         <li>React</li>

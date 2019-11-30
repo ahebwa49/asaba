@@ -66,7 +66,7 @@ class Nav extends Component {
                     alt="project image"
                   />
                   <br />
-                  <strong>PROJECTS</strong>
+                  <strong>VISUALIZATIONS</strong>
                 </div>
               </div>
             </Link>
