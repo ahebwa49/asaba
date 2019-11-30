@@ -8,7 +8,7 @@ class FooterProjects extends Component {
   }
   handleFooterProjectsClick() {
     Router.push({
-      pathname: "/projects",
+      pathname: "/visualizations",
       query: {}
     });
   }

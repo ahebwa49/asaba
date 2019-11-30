@@ -57,7 +57,7 @@ class Nav extends Component {
                 </div>
               </div>
             </Link>
-            <Link href="projects">
+            <Link href="visualizations">
               <div id="projects" className="projects">
                 <div>
                   <img
