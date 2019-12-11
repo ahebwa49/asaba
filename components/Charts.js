@@ -9,7 +9,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       temps: {},
-      city: "sf"
+      city: "sf",
+      range: []
     };
   }
   componentDidMount() {
@@ -29,6 +30,10 @@ class App extends React.Component {
         this.setState({ temps: { sf, ny } });
       });
   }
+
+  updateRange = range => {
+    this.setState({ range });
+  };
 
   updateCity = e => this.setState({ city: e.target.value });
 
