@@ -3,11 +3,13 @@ import React from "react";
 import BarChart from "./visualization/BarChart";
 import RadialChart from "./visualization/RadialChart";
 import LineChart from "./visualization/LineChart";
+import BitcoinChart from "./visualization/BitcoinChart";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      bitcoinData: [],
       temps: {},
       city: "sf",
       range: []
@@ -29,6 +31,20 @@ class App extends React.Component {
 
         this.setState({ temps: { sf, ny } });
       });
+
+    fetch(`https://api.coindesk.com/v1/bpi/historical/close.json`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          bitcoinData: Object.keys(data.bpi).map(date => {
+            return {
+              date: new Date(date),
+              price: data.bpi[date]
+            };
+          })
+        });
+      })
+      .catch(error => console.log(error));
   }
 
   updateRange = range => {
@@ -38,6 +54,7 @@ class App extends React.Component {
   updateCity = e => this.setState({ city: e.target.value });
 
   render() {
+    const { bitcoinData } = this.state;
     const data = this.state.temps[this.state.city];
     return (
       <div className="App" style={{ textAlign: "center", fontFamily: "dosis" }}>
@@ -75,6 +92,7 @@ class App extends React.Component {
           </a>
           )
         </p>
+        <BitcoinChart data={bitcoinData} />
       </div>
     );
   }
