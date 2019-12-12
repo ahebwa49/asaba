@@ -42,7 +42,19 @@ class LineChart extends React.Component {
       .domain(yExtent)
       .range([height - margin.bottom, margin.top]);
 
-    return { xScale, yScale, data };
+    const line = d3
+      .line()
+      .x(d => xScale(d.date))
+      .y(d => yScale(d.price));
+
+    const minY = d3.min(data, d => d.price);
+    const area = d3
+      .area()
+      .x(d => xScale(d.date))
+      .y0(d => yScale(minY))
+      .y1(d => yScale(d.price));
+
+    return { xScale, yScale, data, line, area };
   }
 
   componentDidUpdate() {
@@ -59,19 +71,7 @@ class LineChart extends React.Component {
         justifyItems: "center"
       }
     };
-    const { xScale, yScale, data } = this.state;
-    const line = d3
-      .line()
-      .x(d => xScale(d.date))
-      .y(d => yScale(d.price));
-
-    // console.log(line);
-    const minY = d3.min(data, d => d.price);
-    const area = d3
-      .area()
-      .x(d => xScale(d.date))
-      .y0(d => yScale(minY))
-      .y1(d => yScale(d.price));
+    const { data, line, area } = this.state;
 
     return (
       <div style={styles.container}>
