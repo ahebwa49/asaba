@@ -65,6 +65,16 @@ class App extends React.Component {
           className="App"
           style={{ textAlign: "center", fontFamily: "dosis" }}
         >
+          <div style={{ display: "grid", justifyItems: "center" }}>
+            <h1 style={{ textAlign: "center" }}>30 day Bitcoin Price Chart</h1>
+            {bitcoinData.length ? (
+              <InfoBox data={bitcoinData} />
+            ) : (
+              <h3>loading ...</h3>
+            )}
+          </div>
+
+          <BitcoinChart data={bitcoinData} />
           <h1>
             2017 temperatures for{" "}
             <select name="city" onChange={this.updateCity}>
@@ -99,17 +109,6 @@ class App extends React.Component {
             </a>
             )
           </p>
-
-          <div style={{ display: "grid", justifyItems: "center" }}>
-            <h1 style={{ textAlign: "center" }}>30 day Bitcoin Price Chart</h1>
-            {bitcoinData.length ? (
-              <InfoBox data={bitcoinData} />
-            ) : (
-              <h3>loading ...</h3>
-            )}
-          </div>
-
-          <BitcoinChart data={bitcoinData} />
         </div>
       );
     }
