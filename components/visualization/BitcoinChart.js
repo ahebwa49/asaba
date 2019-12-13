@@ -75,7 +75,6 @@ class LineChart extends React.Component {
 
     return (
       <div style={styles.container}>
-        <h1 style={{ textAlign: "center" }}>30 day Bitcoin Price Chart</h1>
         <svg width={width} height={height}>
           <path
             id={"line"}

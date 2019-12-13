@@ -4,6 +4,7 @@ import BarChart from "./visualization/BarChart";
 import RadialChart from "./visualization/RadialChart";
 import LineChart from "./visualization/LineChart";
 import BitcoinChart from "./visualization/BitcoinChart";
+import InfoBox from "./visualization/InfoBox";
 
 class App extends React.Component {
   constructor(props) {
@@ -98,6 +99,16 @@ class App extends React.Component {
             </a>
             )
           </p>
+
+          <div style={{ display: "grid", justifyItems: "center" }}>
+            <h1 style={{ textAlign: "center" }}>30 day Bitcoin Price Chart</h1>
+            {bitcoinData.length ? (
+              <InfoBox data={bitcoinData} />
+            ) : (
+              <h3>loading ...</h3>
+            )}
+          </div>
+
           <BitcoinChart data={bitcoinData} />
         </div>
       );
