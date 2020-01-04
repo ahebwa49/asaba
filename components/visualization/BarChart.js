@@ -21,7 +21,8 @@ class BarChart extends React.Component {
   }
 
   xAxis = d3.axisBottom();
-  yAxis = d3.axisLeft();
+  // yAxis = d3.axisLeft();
+  yAxis = d3.axisLeft().tickFormat(d => `${d}℉`);
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { data } = nextProps;
