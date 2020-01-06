@@ -6,8 +6,8 @@ const height = 400;
 const margin = {
   top: 20,
   right: 5,
-  bottom: 20,
-  left: 35
+  bottom: 50,
+  left: 60
 };
 
 class LineChart extends React.Component {
@@ -89,6 +89,19 @@ class LineChart extends React.Component {
             fill="#6788ad"
             style={{ opacity: 0.2 }}
           />
+          <text
+            transform={`translate(${width / 2 -
+              margin.left -
+              margin.right}, ${height - 10})`}
+          >
+            Dates for the last 30 days
+          </text>
+          <text
+            transform={`translate(15, ${(height - margin.bottom) /
+              1.5}) rotate(270)`}
+          >
+            Amount in USD
+          </text>
           <g
             ref="xAxis"
             transform={`translate(0, ${height - margin.bottom})`}
