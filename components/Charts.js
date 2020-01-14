@@ -5,6 +5,7 @@ import RadialChart from "./visualization/RadialChart";
 import LineChart from "./visualization/LineChart";
 import BitcoinChart from "./visualization/BitcoinChart";
 import InfoBox from "./visualization/InfoBox";
+import FBarChart from "./visualization/FBarChart";
 
 class App extends React.Component {
   constructor(props) {
@@ -109,6 +110,7 @@ class App extends React.Component {
             </a>
             )
           </p>
+          <FBarChart />
         </div>
       );
     }
