@@ -6,6 +6,7 @@ import LineChart from "./visualization/LineChart";
 import BitcoinChart from "./visualization/BitcoinChart";
 import InfoBox from "./visualization/InfoBox";
 import FBarChart from "./visualization/FBarChart";
+import WorldMapRoot from "./WorldMapRoot";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,20 +19,6 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
-    // fetch(`https://api.coindesk.com/v1/bpi/historical/close.json`)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     this.setState({
-    //       bitcoinData: Object.keys(data.bpi).map(date => {
-    //         return {
-    //           date: new Date(date),
-    //           price: data.bpi[date]
-    //         };
-    //       })
-    //     });
-    //   })
-    //   .catch(error => console.log(error));
-
     Promise.all([
       fetch(
         `https://raw.githubusercontent.com/sxywu/react-d3-example/master/public/sf.json`
@@ -67,9 +54,7 @@ class App extends React.Component {
   render() {
     const { bitcoinData } = this.state;
     const data = this.state.temps[this.state.city];
-    // if (!bitcoinData.length) {
-    //   return <div style={{ textAlign: "center" }}> loading ...</div>;
-    // } else {
+
     return (
       <div className="App" style={{ textAlign: "center", fontFamily: "dosis" }}>
         <div style={{ display: "grid", justifyItems: "center" }}>
@@ -82,6 +67,7 @@ class App extends React.Component {
         </div>
 
         <BitcoinChart data={bitcoinData} />
+        <WorldMapRoot />
         <h1>
           2017 temperatures for{" "}
           <select name="city" onChange={this.updateCity}>
