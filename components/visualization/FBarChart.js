@@ -55,7 +55,7 @@ class App extends React.Component {
     };
     return (
       <div ref="chart" style={styles.container}>
-        {/* <h1 style={{ textAlign: "center" }}>Hi, I'm the bar chart :)</h1> */}
+        <h1 style={{ textAlign: "center" }}>Bar Chart</h1>
       </div>
     );
   }

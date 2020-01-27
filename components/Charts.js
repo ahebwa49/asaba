@@ -7,6 +7,7 @@ import BitcoinChart from "./visualization/BitcoinChart";
 import InfoBox from "./visualization/InfoBox";
 import FBarChart from "./visualization/FBarChart";
 import WorldMapRoot from "./WorldMapRoot";
+import ScatterPlot from "./visualization/ScatterPlot";
 
 class App extends React.Component {
   constructor(props) {
@@ -102,6 +103,7 @@ class App extends React.Component {
           </a>
           )
         </p>
+        <ScatterPlot />
         <FBarChart />
       </div>
     );
