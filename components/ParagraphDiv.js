@@ -20,8 +20,8 @@ const ParagraphDiv = () => {
         commercial experience. I have consulted for a few clients, providing
         guidance on varied software projects. These days I work mainly with
         react, react native, redux or apollo-client and D3 for frontend,
-        architecting solutions around node, express, and MongoDB at the back-end
-        using both GraphQL and REST API's.
+        architecting solutions around node, express and MongoDB for back-end
+        utilizing both GraphQL and REST API's.
         <br />
         <br />I am currently located in Kampala, Uganda and work with clients
         from anywhere in the World.
