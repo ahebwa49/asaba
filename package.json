@@ -4,7 +4,7 @@
   "description": "asabahebwa! An example React and Next Js",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 7777",
+    "dev": "next -p 7778",
     "build": "next build",
     "start": "next start -p $PORT",
     "test": "jest",
