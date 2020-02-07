@@ -16,7 +16,7 @@ const ProfileParagraph = () => {
         Hello, Night Owl. I’m Livingstone, a software developer from the
         internet building apps for devices, big and small. I have a hardwired
         desire to be better, an instinct for good design, a strong ambition to
-        make a difference on the web, embarrassing hang-ups on semantics, and
+        make a difference on the web, embracing hang-ups on semantics and
         evangelistic tendencies.
         <br />
         Look me up on: <FrontSocialParagraph />
