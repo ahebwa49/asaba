@@ -153,28 +153,10 @@ body {
   font-family: dosis, "HelveticaNeue-CondensedBold", "trebuchet ms", sans-serif;
   transition: 0s background-color;
 }
-/* .close {
-  display: grid;
-  text-decoration: none;
-  align-items: center;
-  justify-items: center;
-  position: relative;
-  grid-column: 2/3;
-  grid-row: 1/2;
-  width: 25%;
-  height: 100%;
-  font-size: 2em;
-  color: white;
-  text-align: center;
-  align-self: center;
-  justify-self: end;
-  background-color: rgb(204, 102, 102);
-  transition: 0s background-color;
-} */
 
-.overlay {
-  overflow-x: hidden; /* Disable horizontal scroll */
-  overflow-y: hidden; /* Disable vertical scroll */
+/* .overlay {
+  overflow-x: hidden;
+  overflow-y: hidden;
   display: grid;
   grid-template-columns: repeat(2, minmax(100px, 1fr));
   grid-template-rows: 60px 1fr 1fr;
@@ -188,17 +170,10 @@ body {
   align-items: center;
   z-index: 5;
   border-radius: 2px;
-  background-color: rgb(0, 0, 0); /* Black fallback color */
-  background-color: #b75b5b; /* Black w/opacity */
-  /*border: 2px solid green;*/
-}
-/* #headerBar {
-  animation-delay: 2.5s;
-  animation-name: movedown;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
+  background-color: rgb(0, 0, 0);
+  background-color: #b75b5b;
 } */
+
 @keyframes movedown {
   0% {
     visibility: hidden;
@@ -290,10 +265,6 @@ body {
   }
 }
 
-/* .overlay .close a {
-  color: white;
-  text-align: center;
-} */
 .profile {
   display: grid;
   align-items: center;
@@ -1120,4 +1091,10 @@ code {
 
 .sBar:hover {
   fill: brown;
+}
+
+/* charts */
+.barChart {
+  width: 650;
+  height: 400;
 }
