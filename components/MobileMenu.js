@@ -15,43 +15,34 @@ class MobileMenu extends Component {
     });
   };
 
-  handleProfileClick = () => {
-    Router.push({
-      pathname: "/profile",
-      query: {}
-    });
-  };
-
-  handleStackClick = () => {
-    Router.push({
-      pathname: "/stack",
-      query: {}
-    });
-  };
-
-  handleVisualizationsClick = () => {
-    Router.push({
-      pathname: "/visualizations",
-      query: {}
-    });
-  };
-
   render() {
     return (
       <div className="mobileMenu">
         <div className="listItems">
           <>
-            <div className="listItem" onClick={this.handleProfileClick}>
-              Profile
-            </div>
-            <div className="listItem" onClick={this.handleVisualizationsClick}>
-              Visualizations
+            <div className="listItem">
+              <Link href="/profile">
+                <a style={{ textDecoration: "none", color: "white" }}>
+                  Profile
+                </a>
+              </Link>
             </div>
             <div className="listItem">
-              <div onClick={this.handleBlogClick}>Blog</div>
+              <Link href="/visualizations">
+                <a style={{ textDecoration: "none", color: "white" }}>
+                  Visualizations
+                </a>
+              </Link>
             </div>
-            <div className="listItem" onClick={this.handleStackClick}>
-              Stack
+            <div className="listItem">
+              <Link href="https://medium.com/@ahebwa49">
+                <a style={{ textDecoration: "none", color: "white" }}>Blog</a>
+              </Link>
+            </div>
+            <div className="listItem">
+              <Link href="/stack">
+                <a style={{ textDecoration: "none", color: "white" }}>Stack</a>
+              </Link>
             </div>
           </>
         </div>

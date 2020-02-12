@@ -38,7 +38,10 @@ class Page extends Component {
         <Meta />
         {/* <Nav menuOpen={this.state.menuOpen} closeMenu={this.closeMenu} /> */}
         {showMobileMenu && (
-          <MobileMenu handleShowMobileMenu={this.handleShowMobileMenu} />
+          <MobileMenu
+            handleShowMobileMenu={this.handleShowMobileMenu}
+            handleCloseMobileMenu={this.handleCloseMobileMenu}
+          />
         )}
         <Header handleShowMobileMenu={this.handleShowMobileMenu} />
         {this.props.children}
