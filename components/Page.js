@@ -1,39 +1,46 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import Header from "./Header";
+import MobileMenu from "./MobileMenu";
 import Meta from "./Meta";
-import Nav from "./Nav";
 
 class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuOpen: false
+      showMobileMenu: false
     };
-    this.handleMenuButtonClick = this.handleMenuButtonClick.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
   }
 
-  handleMenuButtonClick() {
-    this.setState({ menuOpen: !this.state.menuOpen }, () => {
-      document.addEventListener("click", this.closeMenu);
-    });
-  }
+  handleShowMobileMenu = () => {
+    const { showMobileMenu } = this.state;
+    this.setState(
+      {
+        showMobileMenu: !showMobileMenu
+      },
+      () => {
+        document
+          .querySelector(".mobileMenu")
+          .addEventListener("click", this.handleCloseMobileMenu);
+      }
+    );
+  };
 
-  closeMenu() {
-    this.setState({ menuOpen: !this.state.menuOpen }, () => {
-      document.removeEventListener("click", this.closeMenu);
+  handleCloseMobileMenu = () => {
+    this.setState({
+      showMobileMenu: false
     });
-  }
+  };
+
   render() {
+    const { showMobileMenu } = this.state;
     return (
       <div className="container">
         <Meta />
-        <Nav menuOpen={this.state.menuOpen} closeMenu={this.closeMenu} />
-        <Header
-          handleMenuButtonClick={this.handleMenuButtonClick}
-          menuOpen={this.state.menuOpen}
-        />
+        {/* <Nav menuOpen={this.state.menuOpen} closeMenu={this.closeMenu} /> */}
+        {showMobileMenu && (
+          <MobileMenu handleShowMobileMenu={this.handleShowMobileMenu} />
+        )}
+        <Header handleShowMobileMenu={this.handleShowMobileMenu} />
         {this.props.children}
       </div>
     );
