@@ -2,7 +2,7 @@ import React from "react";
 import * as d3 from "d3";
 import moment from "moment";
 
-const width = 650;
+var width = 650;
 const height = 400;
 const margin = {
   top: 20,
@@ -19,6 +19,11 @@ class BarChart extends React.Component {
       range: null
     };
   }
+
+  // updateWindowDimensions = () => {
+  //   console.log(window.innerWidth);
+  //   window.innerWidth > 600 ? (width = 650) : (width = 310);
+  // };
 
   xAxis = d3.axisBottom();
   yAxis = d3.axisLeft().tickFormat(d => `${d}℉`);
@@ -65,6 +70,9 @@ class BarChart extends React.Component {
   }
 
   componentDidMount() {
+    // this.updateWindowDimensions();
+    // window.addEventListener("resize", this.updateWindowDimensions);
+
     this.brush = d3
       .brushX()
       .extent([
@@ -83,6 +91,10 @@ class BarChart extends React.Component {
       });
     d3.select(this.refs.brush).call(this.brush);
   }
+
+  // componentWillUnmount() {
+  //   window.removeEventListener("resize", this.updateWindowDimensions);
+  // }
 
   componentDidUpdate() {
     this.xAxis.scale(this.state.xScale);
